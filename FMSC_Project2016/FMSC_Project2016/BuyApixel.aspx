@@ -65,6 +65,8 @@
                         <td>Please check the name that will be displayed on the Home page<br />
                             <br />
                             <br />
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server" ChildrenAsTriggers="true">
+                                <ContentTemplate>
                             <asp:Label ID="Print_name" runat="server" ></asp:Label>
                             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
@@ -73,16 +75,15 @@
                             
                             <br />
                             <br />
-                            <asp:UpdatePanel ID="UpdatePanel1" runat="server" ChildrenAsTriggers="true">
-                                <ContentTemplate>
+                            
                                     <asp:CheckBox ID="CheckBox1" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" Text="Click to change the display name" AutoPostBack="true"/>
                                     <asp:Panel ID="Panel1" runat="server" Visible="false">
                                         Please enter the name to be displayed<br />
                                         <br />
-                                        &nbsp;<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                                        &nbsp;<asp:TextBox ID="update_name" runat="server"></asp:TextBox>
                                         <br />
                                         <br />
-                                        <asp:Button ID="Button3" runat="server" Text="Submit" />
+                                        <asp:Button ID="Button3" runat="server" Text="Submit" OnClick="Button3_Click" />
                                     </asp:Panel>
                                 </ContentTemplate>
                                 <Triggers>

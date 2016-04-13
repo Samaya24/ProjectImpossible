@@ -139,6 +139,15 @@ namespace FMSC_Project2016 {
         protected global::System.Web.UI.WebControls.Label user_name;
         
         /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
         /// Print_name control.
         /// </summary>
         /// <remarks>
@@ -155,15 +164,6 @@ namespace FMSC_Project2016 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.ScriptManager ScriptManager1;
-        
-        /// <summary>
-        /// UpdatePanel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
         /// CheckBox1 control.
@@ -184,13 +184,13 @@ namespace FMSC_Project2016 {
         protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
-        /// TextBox1 control.
+        /// update_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox update_name;
         
         /// <summary>
         /// Button3 control.

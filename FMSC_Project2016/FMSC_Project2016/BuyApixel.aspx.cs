@@ -61,6 +61,7 @@ namespace FMSC_Project2016
                         sqlcommand = new SqlCommand(query, dbConnection);
                         sqlreader.Close();
                         int number = (int)sqlcommand.ExecuteScalar();
+                        Session["number"] = number;
                         if (number != 0)
                         {
                             sqlreader.Close();
@@ -109,6 +110,38 @@ namespace FMSC_Project2016
         protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             Panel1.Visible = true;
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            string conStr = ConfigurationManager.ConnectionStrings["projectConnectionString"].ConnectionString;
+            SqlConnection dbConnection = new SqlConnection(conStr);
+            SqlCommand sqlcommand;
+           // SqlDataReader reader;
+            string query;
+
+            try
+            {
+                dbConnection.Open();
+                int number = (int)Session["number"];
+                query = "UPDATE PURCHASE_USER SET REGISTERED_NAME = '" + update_name.Text + "' WHERE PURCHASE_ID =" + number + ";";
+                sqlcommand = new SqlCommand(query, dbConnection);
+                int count = sqlcommand.ExecuteNonQuery();
+                if(count != 0)
+                {
+                    Panel1.Visible = false;
+                    Print_name.Text = update_name.Text;
+                }
+            }
+            catch(SqlException ex)
+            {
+                Label1.Text = (" < p > Error code " + ex.Number
+                        + ": " + ex.Message + "</p>");
+            }
+            finally
+            {
+                dbConnection.Close();
+            }
         }
     }
 }
