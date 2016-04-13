@@ -54,22 +54,33 @@ namespace FMSC_Project2016
                     if (sqlreader.Read())
                     {
                         query = string.Empty;
-                        query = "INSERT INTO PURCHASE_DETAILS VALUES ('" + username + "','" +
+                        query = "INSERT INTO PURCHASE_USER VALUES ('" + username + "','" +
                                 Convert.ToInt32(noOfPixels.SelectedItem.Text) + "','" +
-                                sqlreader["first_name"] + " " + sqlreader["last_name"] + "');";
+                                sqlreader["first_name"] + " " + sqlreader["last_name"] + "',0,0);SELECT CAST(scope_identity() AS int)";
 
                         sqlcommand = new SqlCommand(query, dbConnection);
                         sqlreader.Close();
-                        int number = sqlcommand.ExecuteNonQuery();
+                        int number = (int)sqlcommand.ExecuteScalar();
                         if (number != 0)
                         {
-                            string query1 = "SELECT RESISTERED_NAME FROM PURCHASE_DETAILS WHERE "
-                            SqlDataReader reader = sqlcommand.ExecuteReader();
-                            Print_name.Text = sqlreader["first_name"] + " " + sqlreader["last_name"];
+                            sqlreader.Close();
+                            query = string.Empty;
+                            query = "SELECT REGISTERED_NAME FROM PURCHASE_USER WHERE PURCHASE_ID = '" + number + "';";
+                            sqlcommand = new SqlCommand(query, dbConnection);
+                            sqlreader = sqlcommand.ExecuteReader();
+                            if (sqlreader.Read())
+                            {
+                                Print_name.Text = sqlreader["REGISTERED_NAME"].ToString();
+                                MultiView1.ActiveViewIndex = 2;
+                            }
+                            else
+                            {
+                                Print_name.Text = "Something went wrong you stupid";
+                            }
                         }
                         else
                         {
-                            Print_name.Text = "Something went wrong you stupid";
+                           Print_name.Text = "Something went wrong you stupid";
                         }
                     }
                     else
@@ -79,7 +90,8 @@ namespace FMSC_Project2016
                 }
                 catch(SqlException ex)
                 {
-
+                    Label1.Text = (" < p > Error code " + ex.Number
+                        + ": " + ex.Message + "</p>");
                 }
                 finally
                 {
@@ -92,6 +104,11 @@ namespace FMSC_Project2016
         protected bool paypal()
         {
             return true;
+        }
+
+        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            Panel1.Visible = true;
         }
     }
 }
