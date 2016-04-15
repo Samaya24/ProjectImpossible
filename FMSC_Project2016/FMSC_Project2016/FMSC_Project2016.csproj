@@ -64,6 +64,7 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\bootstrapCyborg.min.css" />
     <Content Include="css\styles.css" />
+    <Content Include="DonateMeal.aspx" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery-1.8.2.min.js" />
@@ -71,6 +72,7 @@
     <Content Include="js\script.js" />
     <Content Include="Login.aspx" />
     <Content Include="Payment_confirmation.aspx" />
+    <Content Include="payment_success.aspx" />
     <Content Include="Paypal_trail.aspx" />
     <Content Include="Signup.aspx" />
     <Content Include="Web.config" />
@@ -83,6 +85,13 @@
     </Compile>
     <Compile Include="BuyApixel.aspx.designer.cs">
       <DependentUpon>BuyApixel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DonateMeal.aspx.cs">
+      <DependentUpon>DonateMeal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DonateMeal.aspx.designer.cs">
+      <DependentUpon>DonateMeal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -104,6 +113,13 @@
     </Compile>
     <Compile Include="Payment_confirmation.aspx.designer.cs">
       <DependentUpon>Payment_confirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="payment_success.aspx.cs">
+      <DependentUpon>payment_success.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="payment_success.aspx.designer.cs">
+      <DependentUpon>payment_success.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paypal_trail.aspx.cs">
       <DependentUpon>Paypal_trail.aspx</DependentUpon>
