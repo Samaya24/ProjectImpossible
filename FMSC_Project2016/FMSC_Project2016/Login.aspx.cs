@@ -51,6 +51,7 @@ namespace FMSC_Project2016
                             //if any other id then go to home page
                             else
                             {
+                                Session["currentUser"] = user_id;
                                 Response.Redirect("~/Default.aspx");
                             }
 

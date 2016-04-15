@@ -10,20 +10,21 @@
 
 <asp:Content ID="ContentBody" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 <!--    <center><asp:Image ID="Image1" runat="server" ImageUrl="img/collage.jpg" /></center> -->
-    <canvas id="myCanvas" width="1000" height="1000"></canvas>
+    <center><canvas id="myCanvas" width="1000" height="1000"></canvas></center>
 
-      <script>
+      <script type="text/javascript">
+          
         function drawImage(imageObj) {
             var canvas = document.getElementById('myCanvas');
             var context = canvas.getContext('2d');
-            var imageX = 50;
-            var imageY = 50;
+            var imageX = 0;
+            var imageY = 0;
             var imageWidth = imageObj.width;
             var imageHeight = imageObj.height;
 
             context.drawImage(imageObj, imageX, imageY);
 
-            var imageData = context.getImageData(0, 0, imageWidth, imageHeight);
+            var imageData = context.getImageData(imageX, imageY, imageWidth, imageHeight);
             //        var data1 = imageData.data;
             //context.putImageData(imageData, 50, 600);
 
@@ -32,13 +33,19 @@
             //for (var i = 0; i < copy.data.length; i++) {
             //    copy.data[i] = imageData.data[i];
             //}
-
-            for (var i = 0; i < imageData.data.length; i += 4) {
-          //      imageData.data[i + 2] = 255;
-                imageData.data[i + 3] = 20;
+            
+            var x = '<%= Convert.ToInt32(Session["noOfPixels"])%>';
+            for (var i = 0; i < imageData.data.length; i += 4) {          
+                if (i < x * 4) {
+                    imageData.data[i + 3] = 255;
+                }
+                else {
+                    imageData.data[i + 3] = 20;
+                }
             }
 
             context.putImageData(imageData, 0, 0);
+
 
             //context.putImageData(copy, 250, 600);
 
