@@ -4,9 +4,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
-    <%--    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>--%>
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContentPlaceHolder" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+
+    <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <asp:ContentPlaceHolder ID="ScriptContentPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
 
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/bootstrapCyborg.min.css" rel="stylesheet" />
@@ -110,7 +117,9 @@
                 
             </asp:ContentPlaceHolder>
         </div>
-    
+        <br /><br />
+    </div>
+
         <footer>
             <div class="container">
                 <div class="row">
@@ -159,7 +168,6 @@
 
         <!-- Custom JS -->
         <script src="js/script.js"></script>
-    </div>
 
     <%--    <form id="form1" runat="server">
     <div>

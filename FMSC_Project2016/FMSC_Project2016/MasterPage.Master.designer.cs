@@ -13,6 +13,33 @@ namespace FMSC_Project2016 {
     public partial class MasterPage {
         
         /// <summary>
+        /// TitleContentPlaceHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder TitleContentPlaceHolder;
+        
+        /// <summary>
+        /// HeadContentPlaceHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContentPlaceHolder;
+        
+        /// <summary>
+        /// ScriptContentPlaceHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ScriptContentPlaceHolder;
+        
+        /// <summary>
         /// MainContentPlaceHolder control.
         /// </summary>
         /// <remarks>
