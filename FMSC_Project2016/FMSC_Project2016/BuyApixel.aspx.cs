@@ -33,6 +33,7 @@ namespace FMSC_Project2016
                 meals_quantity.Text = noOfPixels.SelectedItem.Text;
                 double i = ((Convert.ToInt32(noOfPixels.SelectedItem.Text)) * 0.22);
                 Total.Text ="$" + i.ToString();
+                Session["total_price"] = i;
                 Session["noOfPixels"] = noOfPixels.SelectedItem.Text;
                 
             }
