@@ -58,7 +58,7 @@
                         <td>links for facebook , twitter and  other sites</td>
                     </tr>
                 </table>
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="Label1" runat="server"></asp:Label>
     </div>
     </form>
 </body>

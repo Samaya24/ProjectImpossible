@@ -104,13 +104,13 @@
                 <!-- end container -->
             </div>
             <!-- end navbar -->
-       <br /><br /><br />
+       <br /><br /><br /><br />
         <div class="container">
             <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
                 
             </asp:ContentPlaceHolder>
         </div>
-    </div>
+    
         <footer>
             <div class="container">
                 <div class="row">
@@ -159,6 +159,7 @@
 
         <!-- Custom JS -->
         <script src="js/script.js"></script>
+    </div>
 
     <%--    <form id="form1" runat="server">
     <div>

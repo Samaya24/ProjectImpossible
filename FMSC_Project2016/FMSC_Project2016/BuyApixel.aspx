@@ -79,10 +79,10 @@
                                 <input type="hidden" name="item_name" value="Memorex 256MB Memory Stick" />
                             </td>
                             <td>
-                                <input type="hidden" name="amount" value="<%=Session["total_price"] %>" 10/>
+                                <input type="hidden" name="amount" value="<%=Session["total_price"] %>"/>
                             </td>
                             <td class="item-total">
-                                10
+                                <input type="text" name="item-total" value="10" />
                             </td>
                         </tr>
                     </table>

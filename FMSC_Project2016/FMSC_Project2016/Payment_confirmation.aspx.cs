@@ -98,6 +98,7 @@ namespace FMSC_Project2016
                 {
                     Panel1.Visible = false;
                     Print_name.Text = update_name.Text;
+                    CheckBox1.Checked = false;
                 }
             }
             catch (SqlException ex)
