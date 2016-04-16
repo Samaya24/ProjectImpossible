@@ -46,8 +46,18 @@
                                 </Triggers>
                             </asp:UpdatePanel>
                         </td>
+                        <td>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </td>
+                    </tr>
+                    <tr>
                         <%-- links for facebook , twitter and  other sites--%>
-                        <td>links for facebook , twitter and  other sites</td>
+                        <td>links for facebook , twitter and  other sites
+                            <asp:Label ID="labelSteps_1_2" runat="server" Text=""></asp:Label>
+<%--// The code to populate the asp:Label component with the html and script code
+// for Steps 1 and 2 should go in the code-behind file--%>
+                            
+                        </td>
                     </tr>
                 </table>
         <asp:Label ID="Label1" runat="server"></asp:Label>
