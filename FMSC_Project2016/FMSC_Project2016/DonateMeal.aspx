@@ -6,12 +6,18 @@
             <%--view to get the pixel values--%>
             <asp:View ID="View1" runat="server">
                 <form id="form1" runat="server">
-                    the number of pixels you want to buy:
+                    Please select the number of pixels you want to buy to the number of meals to donate:
+                    <br />
+                    <br />
                 <%--drop down list with pre populated values--%>
-                    <asp:DropDownList ID="noOfPixels" runat="server">
+                    <asp:DropDownList ID="noOfPixels" runat="server" CssClass="dropdown form-control" Width="100px">
                         <asp:ListItem></asp:ListItem>
                     </asp:DropDownList>
-                    <asp:Button ID="Button1" runat="server" Text="Proceed to Checkout" OnClick="Button1_Click" />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <asp:Button ID="Button1" runat="server" Text="Proceed to Checkout" OnClick="Button1_Click" CssClass="form-control" Width="250px" />
                     <asp:Label ID="Label1" runat="server"></asp:Label>
                 </form>
             </asp:View>

@@ -40,7 +40,7 @@
     </style>
 </head>
 <body>
-    <form id="login" method="post">
+    
         <div class="container" id="main">
             <div class="navbar navbar-fixed-top">
                 <div class="container">
@@ -121,10 +121,7 @@
                             </li>
                         </ul>
                         <!-- end nav pull-right -->
-
-                    </div>
-                    <!-- end nav-collapse -->
-                    <div class="modal fade" id="loginModal" role="dialog">
+                        <div class="modal fade" id="loginModal" role="dialog">
                         <div class="modal-dialog">
 
                             <!-- Modal content-->
@@ -135,7 +132,7 @@
                                 </div>
                                 <div class="modal-body">
                                     <%--                        <p id="errorMessage" style="color: red" />--%>
-
+                                    <form id="form1" method="post">
                                     <asp:Label ID="errorMessage" runat="server"></asp:Label>
                                     <div>
                                         <label for="fname">Username</label>
@@ -152,14 +149,20 @@
                                     <input type="checkbox" />
                                     <label>Remember Me</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                                     <button type="submit" class="btn btn-success">Log In</button>
+                                    </form>
                                 </div>
                                 <div class="modal-footer">
                                     Not registered yet. <a href="Signup.aspx">Click here!</a>
 
                                 </div>
+
                             </div>
                         </div>
                     </div>
+                    </div>
+                    <!-- end nav-collapse -->
+                    
+                    
                 </div>
                 <!-- end container -->
             </div>
@@ -233,7 +236,7 @@
         </asp:ContentPlaceHolder>
     </div>
     </form>--%>
-    </form>
+    
     k
 </body>
 </html>
