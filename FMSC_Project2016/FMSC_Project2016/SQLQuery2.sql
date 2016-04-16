@@ -38,3 +38,4 @@ CREATE TABLE DBO.PURCHASE_USER(
 );
 
 INSERT INTO USER_DETAILS VALUES ('1','srikargr@gmail.com','shreekar','gr','606 hovey','normal','illinois','usa','61761','no');
+

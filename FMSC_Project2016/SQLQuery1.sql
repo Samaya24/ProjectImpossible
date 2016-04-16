@@ -1,0 +1,1 @@
+﻿Select top 1 * from purchase_user order by end_pixel desc;

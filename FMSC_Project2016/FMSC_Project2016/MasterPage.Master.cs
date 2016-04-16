@@ -26,8 +26,8 @@ namespace FMSC_Project2016
 
             if (Page.IsPostBack)
             {
-                string user_id = username.Text;
-                string paswrd = password.Text;
+                string user_id = Request.Form["username"];
+                string paswrd = Request.Form["password"];
 
                 try
                 {
