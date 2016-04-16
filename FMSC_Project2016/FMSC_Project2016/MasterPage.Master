@@ -114,7 +114,7 @@
                                 <li class="divider"></li>
 
                                 <li>
-                                    <a href="#"><span class="glyphicon glyphicon-off"></span>Sign Up</a>
+                                    <a href="Signup.aspx"><span class="glyphicon glyphicon-off"></span>Sign Up</a>
                                 </li>
                             </ul>
                         </li>
@@ -134,7 +134,7 @@
                             </div>
                             <div class="modal-body">
                                 <%--                        <p id="errorMessage" style="color: red" />--%>
-                                <form id="login" method="post">
+                                <form id="login" method="post" runat="server">
                                     <asp:Label ID="errorMessage" runat="server"></asp:Label>
                                     <div>
                                         <label for="fname">Username</label>
