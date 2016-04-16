@@ -9,7 +9,7 @@
 </asp:Content>
 
 <asp:Content ID="ContentBody" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-<!--    <center><asp:Image ID="Image1" runat="server" ImageUrl="img/collage.jpg" /></center> -->
+
     <center><canvas id="myCanvas" width="1000" height="1000"></canvas></center>
 
       <script type="text/javascript">

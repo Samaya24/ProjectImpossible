@@ -25,37 +25,50 @@
     <!-- Include Modernizr in the head, before any other Javascript -->
     <script src="js/modernizr-2.6.2.min.js"></script>
 
+    <%--    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">--%>
+    <%--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>--%>
+    <%--    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>--%>
+
+    <style>
+        @media screen and (min-width: 768px) {
+            .modal-dialog {
+                left: 39%;
+                right: auto;
+                width: 300px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container" id="main">
-            <div class="navbar navbar-fixed-top">
-                <div class="container">
+        <div class="navbar navbar-fixed-top">
+            <div class="container">
 
-                    <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-                    <button class="navbar-toggle" data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+                <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+                <button class="navbar-toggle" data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
-                    <a class="navbar-brand" href="#">
-                        <img src="images/logo.png" alt="Your Logo" /></a>
+                <a class="navbar-brand" href="#">
+                    <img src="images/logo.png" alt="Your Logo" /></a>
 
-                    <div class="nav-collapse collapse navbar-responsive-collapse">
-                        <ul class="nav navbar-nav">
-                            <li class="active">
-                                <a href="Default.aspx">Home Page</a>
-                            </li>
+                <div class="nav-collapse collapse navbar-responsive-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="Default.aspx">Home Page</a>
+                        </li>
 
-                            <li>
-                                <a href="DonateMeal.aspx">Donate a meal</a>
-                            </li>
+                        <li>
+                            <a href="DonateMeal.aspx">Donate a meal</a>
+                        </li>
 
-                            <li>
-                                <a href="#">Dashboard</a>
-                            </li>
+                        <li>
+                            <a href="#">Dashboard</a>
+                        </li>
 
-                            <%--							<li class="dropdown">
+                        <%--			<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Buy A Meal <strong class="caret"></strong></a>
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dashboard <strong class="caret"></strong></a>
     		        			<ul class="dropdown-menu">
@@ -84,90 +97,135 @@
 									</li>
 								</ul><!-- end dropdown-menu -->
 							</li>--%>
-                        </ul>
+                    </ul>
 
-                        <ul class="nav navbar-nav pull-right">
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>My Account <strong class="caret"></strong></a>
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>My Account <strong class="caret"></strong></a>
 
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="#"><span class="glyphicon glyphicon-wrench"></span>Log in</a>
-                                    </li>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-wrench"></span>Log in</a>
 
-                                    <li class="divider"></li>
+                                </li>
 
-                                    <li>
-                                        <a href="#"><span class="glyphicon glyphicon-off"></span>Sign Up</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- end nav pull-right -->
-                    </div>
-                    <!-- end nav-collapse -->
+
+
+                                <li class="divider"></li>
+
+                                <li>
+                                    <a href="#"><span class="glyphicon glyphicon-off"></span>Sign Up</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- end nav pull-right -->
 
                 </div>
-                <!-- end container -->
-            </div>
-            <!-- end navbar -->
-       <br /><br /><br /><br />
-        <div class="container">
-            <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
-                
-            </asp:ContentPlaceHolder>
-        </div>
-        <br /><br />
-    </div>
+                <!-- end nav-collapse -->
+                <div class="modal fade" id="loginModal" role="dialog">
+                    <div class="modal-dialog">
 
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <h6>Copyright &copy; 2016</h6>
-                    </div>
-                    <!-- end col-sm-3 -->
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h5 class="modal-title">Login Form</h5>
+                            </div>
+                            <div class="modal-body">
+                                <%--                        <p id="errorMessage" style="color: red" />--%>
+                                <form id="login" method="post">
+                                    <asp:Label ID="errorMessage" runat="server"></asp:Label>
+                                    <div>
+                                        <label for="fname">Username</label>
+                                        <asp:TextBox ID="username" runat="server"></asp:TextBox>
+                                        <%--       <input type="text" class="form-control" id="username" name="username" placeholder="Enter email address" required="true">--%>
+                                    </div>
+                                    <br />
+                                    <div>
+                                        <label for="fname">Password</label>
+                                        <asp:TextBox ID="password" runat="server"></asp:TextBox>
+                                        <%--     <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required="true">--%>
+                                    </div>
+                                    <br />
+                                    <input type="checkbox" />
+                                    <label>Remember Me</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                            <asp:Button ID="Button1" class="btn btn-success" OnClick="Button1_Click" runat="server" Text="Log In" />
+                                    <%--    <button type="submit" class="btn btn-success">Log In</button>--%>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                Not registered yet. <a href="Signup.aspx">Click here!</a>
 
-                    <div class="col-sm-3">
-                        <h6>About Us</h6>
-                        <p>This website is just a display of power of bootstrap. It includes introduction about me and my interest and goals.</p>
+                            </div>
+                        </div>
                     </div>
-                    <!-- end col-sm-3 -->
-
-                    <div class="col-sm-3">
-                        <h6>Navigation</h6>
-                        <ul class="unstyled">
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Links</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                    <!-- end col-sm-3 -->
-
-                    <div class="col-sm-3">
-                        <h6>Follow Us</h6>
-                        <ul class="unstyled">
-                            <li><a href="#">Twitter</a></li>
-                            <li><a href="#">Facebook</a></li>
-                            <li><a href="#">Google Plus</a></li>
-                        </ul>
-                    </div>
-                    <!-- end col-sm-3 -->
                 </div>
-                <!-- end row -->
             </div>
             <!-- end container -->
-        </footer>
+        </div>
 
-        <script src="http://code.jquery.com/jquery.js"></script>
+        <!-- end navbar -->
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="container">
+            <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <br />
+        <br />
+    </div>
 
-        <script src="js/jquery-1.8.2.js"></script>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h6>Copyright &copy; 2016</h6>
+                </div>
+                <!-- end col-sm-3 -->
 
-        <script src="js/bootstrap.min.js"></script>
+                <div class="col-sm-3">
+                    <h6>About Us</h6>
+                    <p>This website is just a display of power of bootstrap. It includes introduction about me and my interest and goals.</p>
+                </div>
+                <!-- end col-sm-3 -->
 
-        <!-- Custom JS -->
-        <script src="js/script.js"></script>
+                <div class="col-sm-3">
+                    <h6>Navigation</h6>
+                    <ul class="unstyled">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Links</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- end col-sm-3 -->
+
+                <div class="col-sm-3">
+                    <h6>Follow Us</h6>
+                    <ul class="unstyled">
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Google Plus</a></li>
+                    </ul>
+                </div>
+                <!-- end col-sm-3 -->
+            </div>
+            <!-- end row -->
+        </div>
+        <!-- end container -->
+    </footer>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+
+    <script src="js/jquery-1.8.2.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
 
     <%--    <form id="form1" runat="server">
     <div>
