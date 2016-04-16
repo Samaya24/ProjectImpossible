@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Signup.aspx.cs" Inherits="FMSC_Project2016.Signup" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <form id="form1">
+
         <asp:Label ID="Label1" runat="server" ></asp:Label>
         <asp:MultiView ID="MultiView1" runat="server">
             <asp:View ID="View1" runat="server">
@@ -94,5 +94,5 @@
                 <p>Please click on the the link <a href="Login.aspx">Login Here</a> to log into the page.</p>
             </asp:View>
         </asp:MultiView>
-    </form>
+  
 </asp:Content>
