@@ -14,7 +14,15 @@ namespace FMSC_Project2016
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                login_anchor.Visible = false;
+                signup_anchor.Visible = false;
+            }
+            else
+            {
+                myaccount_drop.Visible = false;
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -23,6 +31,7 @@ namespace FMSC_Project2016
             SqlConnection dbConnection = new SqlConnection(connstr);
             SqlCommand sqlCmnd;
             SqlDataReader sqlReader;
+            //User
 
             if (Page.IsPostBack)
             {

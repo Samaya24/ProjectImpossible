@@ -103,17 +103,17 @@
                     <ul class="nav navbar-nav pull-right">
                         
                             <li>                               
-                                    <a href="Login.aspx">Log In</a>
+                                    <a id="login_anchor" href="Login.aspx" runat="server">Log In</a>
                             </li>
                             <li>
-                                    <a href="Signup.aspx">Sign Up</a>
+                                    <a id="signup_anchor" href="Signup.aspx" runat="server">Sign Up</a>
                             </li>                  
                         
                             <li>
-                                <asp:Label ID="Label1"></asp:Label>
+                                <asp:Label ID="Label1" runat="server"></asp:Label>
                             </li>
                             
-                        <li class="dropdown">
+                        <li class="dropdown" id="myaccount_drop" runat="server">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>My Account <strong class="caret"></strong></a>
 
                             <ul class="dropdown-menu">
