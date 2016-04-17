@@ -101,22 +101,35 @@
                     </ul>
 
                     <ul class="nav navbar-nav pull-right">
+                        
+                            <li>                               
+                                    <a href="Login.aspx">Log In</a>
+                            </li>
+                            <li>
+                                    <a href="Signup.aspx">Sign Up</a>
+                            </li>                  
+                        
+                            <li>
+                                <asp:Label ID="Label1"></asp:Label>
+                            </li>
+                            
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>My Account <strong class="caret"></strong></a>
 
                             <ul class="dropdown-menu">
                                 <li>
-<%--                                    <a data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-wrench"></span>Log in</a>--%>
-                                    <a href="Login.aspx"><span class="glyphicon glyphicon-off"></span>Log In</a>
+<%--                                  <a data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-wrench"></span>Log in</a>--%>
+                                  <a href="Login.aspx">Update Profile</a>
                                 </li>
 
                                 <li class="divider"></li>
 
                                 <li>
-                                    <a href="Signup.aspx"><span class="glyphicon glyphicon-off"></span>Sign Up</a>
+                                    <a href="Signup.aspx">Log Out</a>
                                 </li>
                             </ul>
                         </li>
+                       
                     </ul>
                     <!-- end nav pull-right -->                    
 

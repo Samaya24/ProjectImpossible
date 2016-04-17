@@ -12,13 +12,12 @@ namespace FMSC_Project2016
 {
     public partial class Default : System.Web.UI.Page
     {
-        
+        private int start_pixel;
+        private int end_pixel;
+        private string registered_name;
+        private int visible_pixel;
         protected void Page_Load(object sender, EventArgs e)
         {
-            int start_pixel;
-            int end_pixel;
-            string registered_name;
-            int visible_pixel;
 
             string conStr = ConfigurationManager.ConnectionStrings["projectConnectionString"].ConnectionString;
 
@@ -50,7 +49,10 @@ namespace FMSC_Project2016
             }
         }
 
-
+        public int Start_pixel { get { return start_pixel; } }
+        public int End_pixel { get { return end_pixel; } }
+        public string Registered_name { get { return registered_name; } }
+        public int Visible_pixel { get { return visible_pixel; } }
 
     }
 }
