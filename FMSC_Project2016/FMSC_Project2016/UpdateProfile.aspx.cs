@@ -66,12 +66,16 @@ namespace FMSC_Project2016
             try
             {
                 dbConnection.Open();
-                string query = "";
+                string query = "UPDATE USER_DETAILS SET FIRST_NAME = '"+frst_name.Text+"', LAST_NAME='"+last_name.Text
+                                +"',STREET_ADDRESS='"+street_address.Text+"',CITY='"+city_address.Text
+                                +"',STATE_ADDRESS='"+state_address.Text+"',COUNTRY='"+country_address.Text
+                                +"',PIN='"+pin_address.Text+"',PHONE_NO='"+phone_num.Text
+                                +"' WHERE USER_ID='"+email_id.Text+"'";
                 sqlcommand = new SqlCommand(query, dbConnection);
                 sqlcommand.ExecuteNonQuery();
 
                 //Activating the password and security question view
-                MultiView1.ActiveViewIndex = 1;
+                Label1.Text = "Your records have been updated";
             }
             catch (SqlException ex)
             {
