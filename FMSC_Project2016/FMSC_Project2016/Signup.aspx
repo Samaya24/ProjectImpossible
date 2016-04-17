@@ -16,6 +16,8 @@
                     <tr>
                         <td>Email:</td>
                         <td><asp:TextBox ID="email_id" runat="server" CssClass="form-group-sm form-control form-inline" Width="250px"></asp:TextBox></td>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Email ID invalid" 
+                            ValidationExpression="^[^\W][\w.]{5,}@{1}[^\W\d]{2,}(.com|.edu)$" ControlToValidate="email_id"></asp:RegularExpressionValidator>
                     </tr>
                     <tr><td class="tabbable">Address fields</td></tr>
                     <tr>
@@ -54,10 +56,13 @@
                     <tr>
                         <td>Password:</td>
                         <td><asp:TextBox ID="password" runat="server" CssClass="form-group-sm form-control form-inline" Width="250px"></asp:TextBox></td>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
                     </tr>
                     <tr>
                         <td>Confirm Password:</td>
                         <td><asp:TextBox ID="cnfrm_password" runat="server" CssClass="form-group-sm form-control form-inline" Width="250px"></asp:TextBox></td>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+                        <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="CompareValidator"></asp:CompareValidator>
                     </tr>
                     <tr>
                         <td>Security Question 1:</td>

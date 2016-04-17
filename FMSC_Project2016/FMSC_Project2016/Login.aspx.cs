@@ -14,6 +14,14 @@ namespace FMSC_Project2016
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                if (Request.Cookies["Username"] != null && Request.Cookies["Password"] != null)
+                {
+                    userid.Text = Request.Cookies["Username"].Value;
+                    password.Attributes["value"] = Request.Cookies["Password"].Value;
+                }
+            }
             string connstr = ConfigurationManager.ConnectionStrings["projectConnectionString"].ConnectionString;
             SqlConnection dbConnection = new SqlConnection(connstr);
             SqlCommand sqlCmnd;

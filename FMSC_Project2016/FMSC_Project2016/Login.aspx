@@ -12,9 +12,9 @@
                     </p>
                     <p>
                         Password:
-                        <asp:TextBox ID="password" runat="server" CssClass="form-control" Width="250px"></asp:TextBox>
+                        <asp:TextBox TextMode="Password" ID="password" runat="server" CssClass="form-control" Width="250px"></asp:TextBox>
                     </p>
-                    
+                    <asp:CheckBox ID="CheckBox1" runat="server" /> Remember Me
                     <p>
                         Not an existing user <a href="Signup.aspx">Signup here</a>&nbsp;&nbsp;&nbsp;<asp:Button ID="Button1" runat="server" Text="Submit" CssClass="btn"/>
                     </p>
