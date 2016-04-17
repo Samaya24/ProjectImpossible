@@ -57,26 +57,26 @@ namespace FMSC_Project2016
                             else
                             {
                                 Session["currentUser"] = user_id;
-
+                                Response.Redirect("~/DonateMeal.aspx");
                             }
 
                             //FormsAuthentication.SignOut();
                         }
                         else
                         {
-                            errorMessage.Text = "User ID or Password is incorrect";
-                            Response.Redirect("~/DonateMeal.aspx");
+                            Request.Form["errorMessage"] = "User ID or Password is incorrect";
+                            Response.Redirect("~/Signup.aspx");
                         }
                     }
                     else
                     {
-                        errorMessage.Text = "No such Employee ID exists";
+                        Request.Form["errorMessage"] = "No such Employee ID exists";
                         Response.Redirect("~/DonateMeal.aspx");
                     }
                 }
                 catch (SqlException ex)
                 {
-                    errorMessage.Text = "<p>Error Code" + ex.Number + ": " + ex.Message + "</p>";
+                    Request.Form["errorMessage"] = "<p>Error Code" + ex.Number + ": " + ex.Message + "</p>";
                 }
                 finally
                 {

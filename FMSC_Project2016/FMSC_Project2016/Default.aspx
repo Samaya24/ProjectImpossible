@@ -34,9 +34,9 @@
             //    copy.data[i] = imageData.data[i];
             //}
             
-            var x = '<%= Convert.ToInt32(Session["noOfPixels"])%>';
+            var counter = '<%= Convert.ToInt32(Session["noOfPixels"])%>';
             for (var i = 0; i < imageData.data.length; i += 4) {          
-                if (i < x * 4) {
+                if (i < counter * 4) {
                     imageData.data[i + 3] = 255;
                 }
                 else {
