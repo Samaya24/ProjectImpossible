@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -32,8 +34,39 @@ namespace FMSC_Project2016
                 double i = ((Convert.ToInt32(noOfPixels.SelectedItem.Text)) * 0.22);
                 Total.Text = "$" + i.ToString();
                 Session["total_price"] = i;
-                Session["noOfPixels"] = noOfPixels.SelectedItem.Text;
 
+                string conStr = ConfigurationManager.ConnectionStrings["projectConnectionString"].ConnectionString;
+
+                SqlConnection dbConnection = new SqlConnection(conStr);
+                SqlCommand sqlcommand;
+                SqlDataReader reader;
+
+                string query = "Select top 1 end_pixel from purchase_user order by end_pixel desc;";
+                try
+                {
+                    dbConnection.Open();
+                    sqlcommand = new SqlCommand(query, dbConnection);
+                    reader = sqlcommand.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        Session["end_pixel_count"] = reader["end_pixel"];
+                    }
+                    else
+                    {
+                        Session["end_pixel_count"] = 0;
+                    }
+                    Session["noOfPixels"] = noOfPixels.SelectedItem.Text;
+                }
+                catch(SqlException ex)
+                {
+                    Label2.Text = (" < p > Error code " + ex.Number
+                        + ": " + ex.Message + "</p>"); ;
+                }
+                finally
+                {
+                    dbConnection.Close();
+                }
             }
         }
     }

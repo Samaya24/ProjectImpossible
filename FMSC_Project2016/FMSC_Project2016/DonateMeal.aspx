@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="DonateMeal.aspx.cs" Inherits="FMSC_Project2016.DonateMeal" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <div class="container">
-
+        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
         <asp:MultiView ID="MultiView1" runat="server">
             <%--view to get the pixel values--%>
             <asp:View ID="View1" runat="server">

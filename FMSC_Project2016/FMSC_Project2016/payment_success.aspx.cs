@@ -37,19 +37,22 @@ namespace FMSC_Project2016
                 SqlConnection dbConnection = new SqlConnection(conStr);
                 SqlCommand sqlcommand;
                 SqlDataReader sqlreader;
-                string username = "srikargr@gmail.com";
+                string username = User.Identity.ToString();
                 try
                 {
                     dbConnection.Open();
                     string query = "SELECT * FROM USER_DETAILS WHERE USER_ID = '" + username + "';";
                     sqlcommand = new SqlCommand(query, dbConnection);
                     sqlreader = sqlcommand.ExecuteReader();
+                    int start_pixel = (int)Session["end_pixel_count"] + 1;
+                    int pixel = Convert.ToInt32((string)Session["noOfPixels"]);
+                    int end_pixel = start_pixel + pixel;
                     if (sqlreader.Read())
                     {
                         query = string.Empty;
                         query = "INSERT INTO PURCHASE_USER VALUES ('" + username + "','" +
-                                Convert.ToInt32((string)Session["noOfPixels"]) + "','" +
-                                sqlreader["first_name"] + " " + sqlreader["last_name"] + "',0,0);SELECT CAST(scope_identity() AS int)";
+                                ((string)Session["noOfPixels"]) + "','" +
+                                sqlreader["first_name"] + " " + sqlreader["last_name"] + "'," + start_pixel.ToString() + "," + end_pixel.ToString() + ");SELECT CAST(scope_identity() AS int)";
 
                         sqlcommand = new SqlCommand(query, dbConnection);
                         sqlreader.Close();
