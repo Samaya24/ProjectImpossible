@@ -14,61 +14,73 @@ namespace FMSC_Project2016
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            labelSteps_1_2.Text = "<a name=\"fb_share\" type=\"button\"></a>" +
+            if (!User.Identity.IsAuthenticated)
+            {
+                form1.Visible = false;
+                Label2.Text = "You do not have permissions to access this page.";
+            }
+            else
+            {
+                labelSteps_1_2.Text = "<a name=\"fb_share\" type=\"button\"></a>" +
                             "<script src=\"http://static.ak.fbcdn.net/connect.php/js/FB.Share\" " +
                             "type=\"text/javascript\"></script>";
-            HtmlMeta tag = new HtmlMeta();
-            tag.Name = "title";
-            tag.Content = "This is the Title";
-            Page.Header.Controls.Add(tag);
-            HtmlMeta tag1 = new HtmlMeta();
-            tag.Name = "description";
-            tag.Content = "Thank you for your courtosey, Please take your time to share ";
-            Page.Header.Controls.Add(tag);
-            HtmlLink link = new HtmlLink();
-            
-            link.Href = "http://www.murrayhilltech.com/images/LogoColorNoText.jpg";
-            link.Attributes["rel"] = "image_src";
-            Page.Header.Controls.Add(link);
+                HtmlMeta tag = new HtmlMeta();
+                tag.Name = "title";
+                tag.Content = "This is the Title";
+                Page.Header.Controls.Add(tag);
+                HtmlMeta tag1 = new HtmlMeta();
+                tag.Name = "description";
+                tag.Content = "Thank you for your courtosey, Please take your time to share ";
+                Page.Header.Controls.Add(tag);
+                HtmlLink link = new HtmlLink();
 
-            if (!IsPostBack)
-            {
-                string conStr = ConfigurationManager.ConnectionStrings["projectConnectionString"].ConnectionString;
-                SqlConnection dbConnection = new SqlConnection(conStr);
-                SqlCommand sqlcommand;
-                SqlDataReader sqlreader;
-                string username = User.Identity.ToString();
-                try
+                link.Href = "http://www.murrayhilltech.com/images/LogoColorNoText.jpg";
+                link.Attributes["rel"] = "image_src";
+                Page.Header.Controls.Add(link);
+
+                if (!IsPostBack)
                 {
-                    dbConnection.Open();
-                    string query = "SELECT * FROM USER_DETAILS WHERE USER_ID = '" + username + "';";
-                    sqlcommand = new SqlCommand(query, dbConnection);
-                    sqlreader = sqlcommand.ExecuteReader();
-                    int start_pixel = (int)Session["end_pixel_count"] + 1;
-                    int pixel = Convert.ToInt32((string)Session["noOfPixels"]);
-                    int end_pixel = start_pixel + pixel;
-                    if (sqlreader.Read())
+                    string conStr = ConfigurationManager.ConnectionStrings["projectConnectionString"].ConnectionString;
+                    SqlConnection dbConnection = new SqlConnection(conStr);
+                    SqlCommand sqlcommand;
+                    SqlDataReader sqlreader;
+                    string username = User.Identity.Name;
+                    try
                     {
-                        query = string.Empty;
-                        query = "INSERT INTO PURCHASE_USER VALUES ('" + username + "','" +
-                                ((string)Session["noOfPixels"]) + "','" +
-                                sqlreader["first_name"] + " " + sqlreader["last_name"] + "'," + start_pixel.ToString() + "," + end_pixel.ToString() + ");SELECT CAST(scope_identity() AS int)";
-
+                        dbConnection.Open();
+                        string query = "SELECT * FROM USER_DETAILS WHERE USER_ID = '" + username + "';";
                         sqlcommand = new SqlCommand(query, dbConnection);
-                        sqlreader.Close();
-                        int number = (int)sqlcommand.ExecuteScalar();
-                        Session["number"] = number;
-                        if (number != 0)
+                        sqlreader = sqlcommand.ExecuteReader();
+                        int start_pixel = (int)Session["end_pixel_count"] + 1;
+                        int pixel = Convert.ToInt32((string)Session["noOfPixels"]);
+                        int end_pixel = start_pixel + pixel;
+                        if (sqlreader.Read())
                         {
-                            sqlreader.Close();
                             query = string.Empty;
-                            query = "SELECT REGISTERED_NAME FROM PURCHASE_USER WHERE PURCHASE_ID = '" + number + "';";
-                            sqlcommand = new SqlCommand(query, dbConnection);
-                            sqlreader = sqlcommand.ExecuteReader();
-                            if (sqlreader.Read())
-                            {
-                                Print_name.Text = sqlreader["REGISTERED_NAME"].ToString();
+                            query = "INSERT INTO PURCHASE_USER VALUES ('" + username + "','" +
+                                    ((string)Session["noOfPixels"]) + "','" +
+                                    sqlreader["first_name"] + " " + sqlreader["last_name"] + "'," + start_pixel.ToString() + "," + end_pixel.ToString() + ");SELECT CAST(scope_identity() AS int)";
 
+                            sqlcommand = new SqlCommand(query, dbConnection);
+                            sqlreader.Close();
+                            int number = (int)sqlcommand.ExecuteScalar();
+                            Session["number"] = number;
+                            if (number != 0)
+                            {
+                                sqlreader.Close();
+                                query = string.Empty;
+                                query = "SELECT REGISTERED_NAME FROM PURCHASE_USER WHERE PURCHASE_ID = '" + number + "';";
+                                sqlcommand = new SqlCommand(query, dbConnection);
+                                sqlreader = sqlcommand.ExecuteReader();
+                                if (sqlreader.Read())
+                                {
+                                    Print_name.Text = sqlreader["REGISTERED_NAME"].ToString();
+
+                                }
+                                else
+                                {
+                                    Print_name.Text = "Something went wrong you stupid";
+                                }
                             }
                             else
                             {
@@ -80,21 +92,18 @@ namespace FMSC_Project2016
                             Print_name.Text = "Something went wrong you stupid";
                         }
                     }
-                    else
+                    catch (SqlException ex)
                     {
-                        Print_name.Text = "Something went wrong you stupid";
+                        Label1.Text = (" < p > Error code " + ex.Number
+                            + ": " + ex.Message + "</p>");
+                    }
+                    finally
+                    {
+                        dbConnection.Close();
                     }
                 }
-                catch (SqlException ex)
-                {
-                    Label1.Text = (" < p > Error code " + ex.Number
-                        + ": " + ex.Message + "</p>");
-                }
-                finally
-                {
-                    dbConnection.Close();
-                }
             }
+             
         }
 
         protected void CheckBox1_CheckedChanged(object sender, EventArgs e)

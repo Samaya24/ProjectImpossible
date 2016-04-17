@@ -13,10 +13,17 @@ namespace FMSC_Project2016
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (User.Identity.IsAuthenticated)
             {
-                MultiView1.ActiveViewIndex = 0;
-                noOfPixels.Items.AddRange(Enumerable.Range(10, 100).Select(en => new ListItem(en.ToString())).ToArray());
+                if (!IsPostBack)
+                {
+                    MultiView1.ActiveViewIndex = 0;
+                    noOfPixels.Items.AddRange(Enumerable.Range(10, 100).Select(en => new ListItem(en.ToString())).ToArray());
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Login.aspx");
             }
         }
 
