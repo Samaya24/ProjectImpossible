@@ -53,7 +53,7 @@
                     <table id="cart">
                         <tr>
                             <td>
-                                <input type="hidden" name="item_name" value="Memorex 256MB Memory Stick" />
+                                <input type="hidden" name="item_name" value="FMSC donate meal" />
                             </td>
                             
                         </tr>
