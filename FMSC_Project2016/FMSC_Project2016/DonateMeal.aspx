@@ -1,4 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="DonateMeal.aspx.cs" Inherits="FMSC_Project2016.DonateMeal" %>
+<asp:Content ID="Content2" ContentPlaceHolderID="TitleContentPlaceHolder" runat="server">
+    Donate a Meal
+</asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <div class="container">
         <asp:Label ID="Label2" runat="server"></asp:Label>

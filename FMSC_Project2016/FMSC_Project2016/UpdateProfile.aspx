@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="UpdateProfile.aspx.cs" Inherits="FMSC_Project2016.UpdateProfile" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContentPlaceHolder" runat="server">
+    Update Profile
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
 </asp:Content>

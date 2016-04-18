@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ForgotPassword.aspx.cs" Inherits="FMSC_Project2016.ForgotPassword" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContentPlaceHolder" runat="server">
+    Forgot Password
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
 </asp:Content>

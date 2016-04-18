@@ -1,4 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="FMSC_Project2016.Login" %>
+<asp:Content ID="Content2" ContentPlaceHolderID="TitleContentPlaceHolder" runat="server">
+    Log In
+</asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <form id="form1" runat="server">
         <asp:Label ID="login_lbl" runat="server"></asp:Label>

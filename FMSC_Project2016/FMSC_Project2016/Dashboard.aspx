@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="FMSC_Project2016.Dashboard" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContentPlaceHolder" runat="server">
+    Dashboard
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="HeadContentPlaceHolder" runat="server">
 </asp:Content>
