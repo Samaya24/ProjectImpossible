@@ -18,6 +18,9 @@
                     <p>
                         Not an existing user <a href="Signup.aspx">Signup here</a>&nbsp;&nbsp;&nbsp;<asp:Button ID="Button1" runat="server" Text="Submit" CssClass="btn"/>
                     </p>
+                    <p>
+                        <a href="ForgotPassword.aspx">Forgot Password</a>
+                    </p>
                 </td>
                 <td>
 
