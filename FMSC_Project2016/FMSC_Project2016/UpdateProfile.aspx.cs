@@ -34,7 +34,7 @@ namespace FMSC_Project2016
                     {
                         frst_name.Text = reader["first_name"].ToString();
                         last_name.Text = reader["last_name"].ToString();
-                        state_address.Text = reader["street_address"].ToString();
+                        street_address.Text = reader["street_address"].ToString();
                         city_address.Text = reader["city"].ToString();
                         state_address.Text = reader["state_address"].ToString();
                         email_id.Text = reader["user_id"].ToString();
