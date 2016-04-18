@@ -63,6 +63,7 @@
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\bootstrapCyborg.min.css" />
+    <Content Include="css\bootstrapSuperhero.min.css" />
     <Content Include="css\styles.css" />
     <Content Include="DonateMeal.aspx" />
     <Content Include="ForgotPassword.aspx" />
@@ -81,6 +82,7 @@
     <Content Include="UpdateProfile.aspx" />
     <Content Include="Web.config" />
     <Content Include="Default.aspx" />
+    <Content Include="Dashboard.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BuyApixel.aspx.cs">
@@ -167,6 +169,13 @@
     </Compile>
     <Compile Include="UpdateProfile.aspx.designer.cs">
       <DependentUpon>UpdateProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
