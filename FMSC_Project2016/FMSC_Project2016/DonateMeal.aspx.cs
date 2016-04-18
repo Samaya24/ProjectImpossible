@@ -18,7 +18,7 @@ namespace FMSC_Project2016
                 if (!IsPostBack)
                 {
                     MultiView1.ActiveViewIndex = 0;
-                    noOfPixels.Items.AddRange(Enumerable.Range(1, 100).Select(en => new ListItem((en*10).ToString())).ToArray());
+                    noOfPixels.Items.AddRange(Enumerable.Range(1, 1000).Select(en => new ListItem((en*10).ToString())).ToArray());
                 }
             }
             else

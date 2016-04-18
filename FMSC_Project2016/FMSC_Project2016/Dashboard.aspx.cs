@@ -25,7 +25,7 @@ namespace FMSC_Project2016
             try
             {
                 con.Open();
-                string query = "select b.state_address as states,sum(a.END_PIXEL) as pixel from PURCHASE_USER a join user_details b on a.user_id = b.user_id group by a.user_id,state_address;";
+                string query = "select b.state_address as states,sum(a.no_of_pixels) as pixel from PURCHASE_USER a join user_details b on a.user_id = b.user_id group by a.user_id,state_address;";
                 DisplayRecord(query);
                 //sqlcommand = new SqlCommand(query, dbConnection);
                 //reader = sqlcommand.ExecuteReader();
