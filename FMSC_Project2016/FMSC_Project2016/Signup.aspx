@@ -67,7 +67,15 @@
                     </tr>
                     <tr>
                         <td>Security Question 1:</td>
-                        <td><asp:TextBox ID="sec_ques1" runat="server" CssClass="form-group-sm form-control form-inline" Width="250px"></asp:TextBox></td>
+                        <td><asp:DropDownList ID="sec_ques1" runat="server" CssClass="dropdown form-control">
+                            <asp:ListItem></asp:ListItem>
+                            <asp:ListItem Value="1">What was your favourite book?</asp:ListItem>
+                            <asp:ListItem Value="2">what is your favourite place?</asp:ListItem>
+                            <asp:ListItem Value="3">Your nick name?</asp:ListItem>
+                            <asp:ListItem Value="4">Your pet's name?</asp:ListItem>
+                            <asp:ListItem Value="5">Name of your role model?</asp:ListItem>
+                        </asp:DropDownList></td>
+                        <%--<td><asp:TextBox ID="sec_ques1" runat="server" CssClass="form-group-sm form-control form-inline" Width="250px"></asp:TextBox></td>--%>
                     </tr>
                     <tr>
                         <td>Answer:</td>
@@ -75,7 +83,15 @@
                     </tr>
                     <tr>
                         <td>Security Question 2:</td>
-                        <td><asp:TextBox ID="sec_ques2" runat="server" CssClass="form-group-sm form-control form-inline" Width="250px"></asp:TextBox></td>
+                        <td><asp:DropDownList ID="sec_ques2" runat="server" CssClass="dropdown form-control">
+                            <asp:ListItem></asp:ListItem>
+                            <asp:ListItem Value="1">What was your favourite book?</asp:ListItem>
+                            <asp:ListItem Value="2">what is your favourite place?</asp:ListItem>
+                            <asp:ListItem Value="3">Your nick name?</asp:ListItem>
+                            <asp:ListItem Value="4">Your pet's name?</asp:ListItem>
+                            <asp:ListItem Value="5">Name of your role model?</asp:ListItem>
+                        </asp:DropDownList></td>
+                        <%--<td><asp:TextBox ID="sec_ques2" runat="server" CssClass="form-group-sm form-control form-inline" Width="250px"></asp:TextBox></td>--%>
                     </tr>
                     <tr>
                         <td>Answer:</td>
@@ -83,7 +99,15 @@
                     </tr>
                     <tr>
                         <td>Security Question 3:</td>
-                        <td><asp:TextBox ID="sec_ques3" runat="server" CssClass="form-group-sm form-control form-inline" Width="250px"></asp:TextBox></td>
+                        <td><asp:DropDownList ID="sec_ques3" runat="server" CssClass="dropdown form-control">
+                            <asp:ListItem></asp:ListItem>
+                            <asp:ListItem Value="1">What was your favourite book?</asp:ListItem>
+                            <asp:ListItem Value="2">what is your favourite place?</asp:ListItem>
+                            <asp:ListItem Value="3">Your nick name?</asp:ListItem>
+                            <asp:ListItem Value="4">Your pet's name?</asp:ListItem>
+                            <asp:ListItem Value="5">Name of your role model?</asp:ListItem>
+                        </asp:DropDownList></td>
+                        <%--<td><asp:TextBox ID="sec_ques3" runat="server" CssClass="form-group-sm form-control form-inline" Width="250px"></asp:TextBox></td>--%>
                     </tr>
                     <tr>
                         <td>Answer:</td>

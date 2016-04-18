@@ -16,6 +16,7 @@ namespace FMSC_Project2016
             if (!IsPostBack)
             {
                 MultiView1.ActiveViewIndex = 0;
+                Label1.Text = string.Empty;
             }
         }
 
@@ -30,6 +31,7 @@ namespace FMSC_Project2016
             try
             {
                 dbConnection.Open();
+
                 string query = "INSERT INTO USER_DETAILS VALuES ('" + email_id.Text + "','" +
                     frst_name.Text + "','" + last_name.Text + "','" + street_address.Text + "','" +
                     city_address.Text + "','" + state_address.Text + "','" + country_address.Text +
@@ -39,6 +41,7 @@ namespace FMSC_Project2016
 
                 //Activating the password and security question view
                 MultiView1.ActiveViewIndex = 1;
+                Label1.Text = string.Empty;
             }
             catch(SqlException ex)
             {
@@ -63,13 +66,21 @@ namespace FMSC_Project2016
             try
             {
                 dbConnection.Open();
-                string query = "INSERT INTO USER_LOGIN_DETAILS VALUES('" + email_id.Text + "','" +
-                                password.Text + "','" + sec_ques1.Text + "','" + Answer1.Text + "','" +
-                                sec_ques2.Text + "','" + Answer2.Text + "','" + sec_ques3.Text + "','" +
-                                Answer3.Text + "');";
-                sqlcommand = new SqlCommand(query, dbConnection);
-                sqlcommand.ExecuteNonQuery();
-                MultiView1.ActiveViewIndex = 2;
+                if(!(sec_ques1.SelectedItem.Text.Equals(null) && sec_ques2.SelectedItem.Text.Equals(null) && sec_ques3.SelectedItem.Text.Equals(null)))
+                { 
+
+                    string query = "INSERT INTO USER_LOGIN_DETAILS VALUES('" + email_id.Text + "','" +
+                                    password.Text + "','" + sec_ques1.SelectedItem.Text + "','" + Answer1.Text + "','" +
+                                    sec_ques2.SelectedItem.Text + "','" + Answer2.Text + "','" + sec_ques3.SelectedItem.Text + "','" +
+                                    Answer3.Text + "');";
+                    sqlcommand = new SqlCommand(query, dbConnection);
+                    sqlcommand.ExecuteNonQuery();
+                    MultiView1.ActiveViewIndex = 2;
+                }
+                else
+                {
+                    Label1.Text = "Please select a proper security question";
+                }
             }
             catch(SqlException ex)
             {

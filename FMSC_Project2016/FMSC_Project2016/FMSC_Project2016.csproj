@@ -65,6 +65,7 @@
     <Content Include="css\bootstrapCyborg.min.css" />
     <Content Include="css\styles.css" />
     <Content Include="DonateMeal.aspx" />
+    <Content Include="ForgotPassword.aspx" />
     <Content Include="img\collage.jpg" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
@@ -95,6 +96,13 @@
     </Compile>
     <Compile Include="DonateMeal.aspx.designer.cs">
       <DependentUpon>DonateMeal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
