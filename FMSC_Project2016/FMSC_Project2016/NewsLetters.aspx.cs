@@ -17,7 +17,7 @@ namespace FMSC_Project2016
             Label2.Text = "Hello," + "<br /><br />";
             Label2.Text += "We are happy to annouce that the meals donations has been going good and we are very happy that you could be a part of it." + "<br /><br /><br />";
             Label2.Text += "Donations are going good. We would like if you told and shared about our website and the work we are doing with as many people as possible." + "<br /><br />";
-            Label2.Text = "We really appreciate the effort." + "<br /><br /><br />";
+            Label2.Text += "We really appreciate the effort." + "<br /><br /><br />";
             Label2.Text += "Regards," + "<br />";
             Label2.Text += "FMSC Organization";
             Label2.Visible = false;
@@ -37,7 +37,7 @@ namespace FMSC_Project2016
                 string query = "select user_id from user_details where subscription = 'Yes'";
                 command = new SqlCommand(query, dbConnection);
                 reader = command.ExecuteReader();
-                if (reader.Read())
+                while (reader.Read())
                 {
                     email.Add(reader["user_id"].ToString());
                 }
