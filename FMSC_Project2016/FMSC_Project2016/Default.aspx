@@ -10,7 +10,9 @@
 
 <asp:Content ID="ContentBody" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
 
-    <center><canvas id="myCanvas" width="1000" height="1000"></canvas></center>
+    <center><canvas id="myCanvas" width="1000" height="1000" style="display:none;"></canvas>
+        <img id="canvasImg" alt="Right click to save me!">
+    </center>
 
       <script type="text/javascript">
           
@@ -45,6 +47,11 @@
             }
 
             context.putImageData(imageData, 0, 0);
+            
+          
+            var dataURL = canvas.toDataURL();
+
+            document.getElementById('canvasImg').src = dataURL;
 
 
             //context.putImageData(copy, 250, 600);
