@@ -81,8 +81,11 @@
     <Content Include="payment_success.aspx" />
     <Content Include="Paypal_trail.aspx" />
     <Content Include="Signup.aspx" />
+    <Content Include="Unsubscribe.aspx" />
     <Content Include="UpdateProfile.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Default.aspx" />
     <Content Include="Dashboard.aspx" />
   </ItemGroup>
@@ -178,6 +181,13 @@
     </Compile>
     <Compile Include="Signup.aspx.designer.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Unsubscribe.aspx.cs">
+      <DependentUpon>Unsubscribe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Unsubscribe.aspx.designer.cs">
+      <DependentUpon>Unsubscribe.aspx</DependentUpon>
     </Compile>
     <Compile Include="UpdateProfile.aspx.cs">
       <DependentUpon>UpdateProfile.aspx</DependentUpon>

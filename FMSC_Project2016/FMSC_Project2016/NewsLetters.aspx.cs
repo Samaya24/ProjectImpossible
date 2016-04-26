@@ -14,14 +14,33 @@ namespace FMSC_Project2016
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Label2.Text = "Hello," + "<br /><br />";
-            Label2.Text += "We are happy to annouce that the meals donations has been going good and we are very happy that you could be a part of it." + "<br /><br /><br />";
-            Label2.Text += "Donations are going good. We would like if you told and shared about our website and the work we are doing with as many people as possible." + "<br /><br />";
-            Label2.Text += "We really appreciate the effort." + "<br /><br /><br />";
-            Label2.Text += "Regards," + "<br />";
-            Label2.Text += "FMSC Organization";
-            Label2.Visible = false;
-            mailsender(Label2.Text);
+            if (!IsPostBack)
+            {
+                
+                string conStr = ConfigurationManager.ConnectionStrings["projectConnectionString"].ConnectionString;
+                SqlConnection dbConnection = new SqlConnection(conStr);
+                SqlCommand command;
+                SqlDataReader reader;
+                int count = 0;
+                dbConnection.Open();
+                string query = string.Empty;
+                query = "Select top 1 end_pixel from purchase_user order by end_pixel desc";
+                command = new SqlCommand(query, dbConnection);
+                reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    count = (int)reader["end_pixel"];
+                }
+                reader.Close();
+                Label2.Text = "Hello," + "<br /><br />";
+                Label2.Text += "We are happy to annouce that the meals donations has been going good and we are very happy that you could be a part of it." + "<br /><br /><br />";
+                Label2.Text += "Donations are going good.So far we have sold : " + "<br />" + "The number of pixels sold:" + count.ToString() + "<br /><br /><br />" + " We would like if you told and shared about our website and the work we are doing with as many people as possible." + "<br /><br />";
+                Label2.Text += "We really appreciate the effort." + "<br /><br /><br />";
+                Label2.Text += "Regards," + "<br />";
+                Label2.Text += "FMSC Organization" + "<br /><br /><br />";
+                Label2.Visible = false;
+                mailsender(Label2.Text);
+            }
         }
         public void mailsender(string s)
         {
@@ -30,6 +49,7 @@ namespace FMSC_Project2016
             SqlCommand command;
             SqlDataReader reader;
             List<string> email = new List<string>();
+            int count = 0;
             //string User_email = string.Empty;
             try
             {
@@ -41,6 +61,8 @@ namespace FMSC_Project2016
                 {
                     email.Add(reader["user_id"].ToString());
                 }
+                reader.Close();
+                
             }
             catch (SqlException ex)
             {
@@ -50,11 +72,14 @@ namespace FMSC_Project2016
             {
                 dbConnection.Close();
             }
-
+            
             foreach (string address in email)
             {
                 string toAddress = address;
-
+                string s1 = string.Empty;
+                s1 += "Click on the link below to unsubscribe" + "<br />";
+                s1 += "http://iis.it.ilstu.edu/368Spr16/it3680105/App2/Unsubscribe.aspx?email=" + address;
+                s += s1;
                 MailAddress messageFrom = new MailAddress("sgonugu@ilstu.edu", "Admin");
                 MailMessage emailMessage = new MailMessage();
                 emailMessage.From = messageFrom;
