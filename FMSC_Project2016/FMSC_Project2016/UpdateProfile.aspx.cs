@@ -36,12 +36,13 @@ namespace FMSC_Project2016
                         last_name.Text = reader["last_name"].ToString();
                         street_address.Text = reader["street_address"].ToString();
                         city_address.Text = reader["city"].ToString();
-                        state_address.Text = reader["state_address"].ToString();
+                        DropDownListState.SelectedValue = reader["state_address"].ToString();
                         email_id.Text = reader["user_id"].ToString();
                         email_id.ReadOnly = true;
                         country_address.Text = reader["country"].ToString();
                         phone_num.Text = reader["phone_no"].ToString();
                         pin_address.Text = reader["pin"].ToString();
+                        DropDownList1.SelectedItem.Text = reader["carrier"].ToString();
                     }
                 }
                 catch(SqlException ex)
@@ -68,9 +69,9 @@ namespace FMSC_Project2016
                 dbConnection.Open();
                 string query = "UPDATE USER_DETAILS SET FIRST_NAME = '"+frst_name.Text+"', LAST_NAME='"+last_name.Text
                                 +"',STREET_ADDRESS='"+street_address.Text+"',CITY='"+city_address.Text
-                                +"',STATE_ADDRESS='"+state_address.Text.ToUpper()+"',COUNTRY='"+country_address.Text
+                                +"',STATE_ADDRESS='"+DropDownListState.SelectedValue.ToUpper()+"',COUNTRY='"+country_address.Text
                                 +"',PIN='"+pin_address.Text+"',PHONE_NO='"+phone_num.Text
-                                +"' WHERE USER_ID='"+email_id.Text+"'";
+                                +"',CARRIER='"+DropDownList1.SelectedItem.Text+"' WHERE USER_ID='"+email_id.Text+"'";
                 sqlcommand = new SqlCommand(query, dbConnection);
                 sqlcommand.ExecuteNonQuery();
 
