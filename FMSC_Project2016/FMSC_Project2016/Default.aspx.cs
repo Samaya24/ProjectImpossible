@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Controls;
 
 namespace FMSC_Project2016
 {
@@ -52,7 +53,9 @@ namespace FMSC_Project2016
                 {
                     no_Of_Donations = (int)reader["num"];
                 }
-
+                Label2.Text = end_pixel.ToString();
+                Label4.Text = (1000000 - end_pixel).ToString();
+                Label6.Text = (end_pixel / 10000).ToString() + "%";
             }
             catch
             {

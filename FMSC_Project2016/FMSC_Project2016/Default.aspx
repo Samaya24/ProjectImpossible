@@ -17,7 +17,16 @@
         </div>
     </div>--%>
 
-    
+    <p>
+        <asp:Label ID="Label1" runat="server" Text="No. of Pixels sold:"></asp:Label>
+        <asp:Label ID="Label2" runat="server" CssClass="text-success"></asp:Label>
+        &nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label3" runat="server" Text="No. of Pixels remaining:"></asp:Label>
+        <asp:Label ID="Label4" runat="server" CssClass="text-warning"></asp:Label>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:Label ID="Label5" runat="server" Text="Percentage sold:"></asp:Label>
+        <asp:Label ID="Label6" runat="server" CssClass="text-success"></asp:Label>
+    </p>
     <center><canvas id="myCanvas" width="1000" height="1000" style="display:none;"></canvas>
         <img id="canvasImg" usemap="#imageMap">
     </center>
