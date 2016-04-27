@@ -101,25 +101,25 @@
                     </ul>
 
                     <ul class="nav navbar-nav pull-right">
-                        
-                            <li>                               
-                                    <a id="login_anchor" href="Login.aspx" runat="server">Log In</a>
-                            </li>
-                            <li>
-                                    <a id="signup_anchor" href="Signup.aspx" runat="server">Sign Up</a>
-                            </li>                  
-                        
-                            <li>
-                                <asp:Label ID="Label1" runat="server"></asp:Label>
-                            </li>
-                            
+
+                        <li>
+                            <a id="login_anchor" href="Login.aspx" runat="server">Log In</a>
+                        </li>
+                        <li>
+                            <a id="signup_anchor" href="Signup.aspx" runat="server">Sign Up</a>
+                        </li>
+
+                        <li>
+                            <asp:Label ID="Label1" runat="server"></asp:Label>
+                        </li>
+
                         <li class="dropdown" id="myaccount_drop" runat="server">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span>My Account <strong class="caret"></strong></a>
 
                             <ul class="dropdown-menu">
                                 <li>
-<%--                                  <a data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-wrench"></span>Log in</a>--%>
-                                  <a href="UpdateProfile.aspx">Update Profile</a>
+                                    <%--                                  <a data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-wrench"></span>Log in</a>--%>
+                                    <a href="UpdateProfile.aspx">Update Profile</a>
                                 </li>
 
                                 <li class="divider"></li>
@@ -129,18 +129,20 @@
                                 </li>
                             </ul>
                         </li>
-                       
+
                     </ul>
-                    <!-- end nav pull-right -->                    
+                    <!-- end nav pull-right -->
 
                 </div>
                 <!-- end nav-collapse -->
-                
-            </div><!-- end container -->
-        </div><!-- end navbar -->
 
-                            <!-- Modal -->
-<%--                        <div class="modal fade" id="loginModal" role="dialog">
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end navbar -->
+
+        <!-- Modal -->
+        <%--                        <div class="modal fade" id="loginModal" role="dialog">
                             <div class="modal-dialog">
 
                                 <!-- Modal content-->
@@ -175,7 +177,7 @@
                             </div>
                         </div>--%>
 
-                        <!-- Modal -->
+        <!-- Modal -->
 
         <br />
         <br />
@@ -189,7 +191,7 @@
         <br />
     </div>
 
-    <footer>
+<%--    <footer>
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
@@ -199,41 +201,52 @@
 
                 <div class="col-sm-6">
                     <h6>About Us</h6>
-                    <p>Founded in 1987, Feed My Starving Children (FMSC) is a Christian non-profit organization committed 
+                    <p>
+                        Founded in 1987, Feed My Starving Children (FMSC) is a Christian non-profit organization committed 
                         to feeding God's children hungry in body and spirit. The approach is simple: volunteers hand-pack 
                         meals specially formulated for malnourished children, and we send them to partners around the world 
                         where they're used to operate orphanages, schools, clinics and feeding programs to break the cycle 
                         of poverty.
 
- </p>
+                    </p>
                 </div>
-                <!-- end col-sm-6 -->
 
-<%--                <div class="col-sm-3">
-                    <h6>Navigation</h6>
-                    <ul class="unstyled">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Links</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>--%>
-                <!-- end col-sm-3 -->
-
-<%--                <div class="col-sm-3">
-                    <h6>Follow Us</h6>
-                    <ul class="unstyled">
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Google Plus</a></li>
-                    </ul>
-                </div>--%>
                 <!-- end col-sm-3 -->
             </div>
             <!-- end row -->
         </div>
         <!-- end container -->
-    </footer>
+    </footer>--%>
+
+
+      <%--Footer begins--%>
+    <div class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h6>Copyright &copy; 2016</h6>
+                </div>
+                <!-- end col-sm-6 -->
+
+                <div class="col-sm-6">
+                    <h6>About Us</h6>
+                    <p>
+                        Founded in 1987, Feed My Starving Children (FMSC) is a Christian non-profit organization committed 
+                        to feeding God's children hungry in body and spirit. The approach is simple: volunteers hand-pack 
+                        meals specially formulated for malnourished children, and we send them to partners around the world 
+                        where they're used to operate orphanages, schools, clinics and feeding programs to break the cycle 
+                        of poverty.
+
+                    </p>
+                </div>
+
+                <!-- end col-sm-3 -->
+            </div>
+        </div>
+    </div>
+    <%-- Footer Ends --%>
+
+
 
     <script src="http://code.jquery.com/jquery.js"></script>
 
