@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="FMSC_Project2016.Dashboard" %>
-
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContentPlaceHolder" runat="server">
     Dashboard
 </asp:Content>
@@ -39,6 +39,8 @@
                 <SortedDescendingCellStyle BackColor="#E9EBEF" />
                 <SortedDescendingHeaderStyle BackColor="#4870BE" />
             </asp:GridView>
+                <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>s
+                <cc1:PieChart ID="PieChart1" runat="server"></cc1:PieChart>
             </center>
         </div>
     </form>

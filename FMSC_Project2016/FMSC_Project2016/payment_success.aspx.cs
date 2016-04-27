@@ -104,7 +104,7 @@ namespace FMSC_Project2016
                     }
                 }
             }
-             
+
         }
 
         protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
@@ -174,7 +174,7 @@ namespace FMSC_Project2016
             message += "Donations are going good.So far we have sold : " + "<br />" + "The number of pixels sold:" + count.ToString() + "<br /><br /><br />" + " We would like if you told and shared about our website and the work we are doing with as many people as possible." + "<br /><br />";
             message += "We really appreciate the effort." + "<br /><br /><br />";
             message += "Regards," + "<br />";
-           message += "FMSC Organization" + "<br /><br /><br />";
+            message += "FMSC Organization" + "<br /><br /><br />";
             Label2.Visible = false;
             mail_subscription_sender(message);
         }
@@ -229,5 +229,6 @@ namespace FMSC_Project2016
                 mailClient.UseDefaultCredentials = true;// false;
                 mailClient.Send(emailMessage);
             }
+        }
     }
 }

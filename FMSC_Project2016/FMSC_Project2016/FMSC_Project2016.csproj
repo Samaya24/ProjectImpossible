@@ -39,6 +39,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=16.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="De.TorstenMandelkow.MetroChart, Version=0.9.5818.20693, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ModernUICharts.WPF.Beta.0.9.1\lib\De.TorstenMandelkow.MetroChart.dll</HintPath>
       <Private>True</Private>

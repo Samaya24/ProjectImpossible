@@ -21,6 +21,7 @@ namespace FMSC_Project2016
 
             SqlCommand sqlcommand;
             SqlDataReader reader;
+            getPieChartStateStatus();
 
             try
             {
@@ -56,6 +57,46 @@ namespace FMSC_Project2016
             GridView1.DataBind();
             con.Close();
             return Dt;
+        }
+
+        // Pie chart for showing states
+        protected void getPieChartStateStatus()
+        {
+            string query = string.Format("select state_address, sum(no_of_pixels) countPixel from user_details u join purchase_user pu ON u.user_id=pu.user_id group by state_address");
+
+            DataTable dt = GetData(query);
+
+
+            //Loop and add each datatable row to the Pie Chart Values
+            foreach (DataRow row in dt.Rows)
+            {
+                PieChart1.PieChartValues.Add(new AjaxControlToolkit.PieChartValue
+                {
+                    Category = row["state_address"].ToString(),
+                    Data = Convert.ToDecimal(row["countPixel"])
+                });
+            }
+            PieChart1.Visible = true;
+        }
+
+        private static DataTable GetData(string query)
+        {
+            string conStr = ConfigurationManager.ConnectionStrings["projectConnectionString"].ConnectionString;
+            SqlConnection dbConnection = new SqlConnection(conStr);
+
+            dbConnection.Open();
+            SqlCommand cmd = dbConnection.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = query;
+
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = dbConnection;
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+
+            da.Fill(dt);
+            return dt;
         }
     }
 }
