@@ -16,6 +16,7 @@ namespace FMSC_Project2016
         private int end_pixel;
         private string registered_name;
         private int visible_pixel;
+        private int no_Of_Donations;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -38,6 +39,17 @@ namespace FMSC_Project2016
                     registered_name = reader["REGISTERED_NAME"].ToString();
                     visible_pixel = (int)reader["END_PIXEL"];
                 }
+
+                reader.Close();
+
+                string queryTotalUser = "Select count(*) num from purchase_user";
+                sqlcommand = new SqlCommand(queryTotalUser, dbConnection);
+                reader = sqlcommand.ExecuteReader();
+                if (reader.Read())
+                {
+                    no_Of_Donations = (int)reader["num"];
+                }
+
             }
             catch
             {
@@ -53,6 +65,7 @@ namespace FMSC_Project2016
         public int End_pixel { get { return end_pixel; } }
         public string Registered_name { get { return registered_name; } }
         public int Visible_pixel { get { return visible_pixel; } }
+        public int No_Of_Donations { get { return no_Of_Donations; } }
 
     }
 }
