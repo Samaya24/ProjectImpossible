@@ -62,7 +62,7 @@ namespace FMSC_Project2016
                     email.Add(reader["user_id"].ToString());
                 }
                 reader.Close();
-                
+
             }
             catch (SqlException ex)
             {
@@ -72,14 +72,14 @@ namespace FMSC_Project2016
             {
                 dbConnection.Close();
             }
-            
+
             foreach (string address in email)
             {
                 string toAddress = address;
                 string s1 = string.Empty;
                 s1 += "Click on the link below to unsubscribe" + "<br />";
                 s1 += "http://iis.it.ilstu.edu/368Spr16/it3680105/App2/Unsubscribe.aspx?email=" + address;
-                s += s1;
+                //s += s1;
                 MailAddress messageFrom = new MailAddress("sgonugu@ilstu.edu", "Admin");
                 MailMessage emailMessage = new MailMessage();
                 emailMessage.From = messageFrom;
@@ -87,7 +87,7 @@ namespace FMSC_Project2016
                 emailMessage.To.Add(messageTo.Address);
                 emailMessage.Subject = "Thank you for your help";
                 string messageText = s.Replace("<br />", Environment.NewLine);
-                emailMessage.Body = messageText;
+                emailMessage.Body = messageText + s1;
                 SmtpClient mailClient = new SmtpClient();
                 mailClient.UseDefaultCredentials = true;// false;
                 mailClient.Send(emailMessage);

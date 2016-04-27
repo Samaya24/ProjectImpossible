@@ -22,6 +22,7 @@ namespace FMSC_Project2016
             }
             else
             {
+                mail_subscription();
                 labelSteps_1_2.Text = "<a name=\"fb_share\" type=\"button\"></a>" +
                             "<script src=\"http://static.ak.fbcdn.net/connect.php/js/FB.Share\" " +
                             "type=\"text/javascript\"></script>";

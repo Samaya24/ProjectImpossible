@@ -40,11 +40,11 @@
             <br />
             <br />
             <p><strong>New Password</strong></p>
-            <asp:TextBox ID="password" runat="server" CssClass="form-control" Width="250px"></asp:TextBox>
+            <asp:TextBox ID="password" TextMode="Password" runat="server" CssClass="form-control" Width="250px"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="password" ErrorMessage="Enter Password"></asp:RequiredFieldValidator>
             <br />
             <p><strong>Confirm Password</strong></p>
-            <asp:TextBox ID="cnfrm_password" runat="server" CssClass="form-control" Width="250px"></asp:TextBox>
+            <asp:TextBox ID="cnfrm_password" TextMode="Password" runat="server" CssClass="form-control" Width="250px"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="cnfrm_password" ErrorMessage="Re-enter Password"></asp:RequiredFieldValidator>
             <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Password do not match" ControlToCompare="password" ControlToValidate="cnfrm_password"></asp:CompareValidator>
             <br />

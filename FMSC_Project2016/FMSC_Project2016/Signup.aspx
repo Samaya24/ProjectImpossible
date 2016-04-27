@@ -44,7 +44,7 @@
                         <td>State</td>
                         <td>
                             <%--<asp:TextBox ID="state_address" runat="server" CssClass="form-group-sm form-control form-inline" Width="250px"></asp:TextBox>--%>
-                            <asp:DropDownList ID="DropDownListState" runat="server">
+                            <asp:DropDownList ID="DropDownListState" runat="server" CssClass="form-control" Width="250px">
                                 <asp:ListItem Value="AL">Alabama</asp:ListItem>
                                 <asp:ListItem Value="AK">Alaska</asp:ListItem>
                                 <asp:ListItem Value="AZ">Arizona</asp:ListItem>
@@ -112,7 +112,7 @@
                     <tr>
                         <td>Carrier</td>
                         <td>
-                            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control" AutoPostBack="true">
+                            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control" AutoPostBack="true" Width="250px">
                                 <asp:ListItem Selected="True">Choose Provider</asp:ListItem>
                                 <asp:ListItem>alltel</asp:ListItem>
                                 <asp:ListItem>att cingular</asp:ListItem>

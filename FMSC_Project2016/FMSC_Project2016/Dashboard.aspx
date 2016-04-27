@@ -14,7 +14,7 @@
     <form id="form1" runat="server">
         <div>
             <center><asp:Label ID="Label1" runat="server" Text="Table showing total number of pixels in a particular state in USA"></asp:Label></center><br /><br />
-            <center><asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Width="500px" CellPadding="10" ForeColor="#333333" GridLines="None" Height="80px">
+            <center><asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Width="500px" CellPadding="10" ForeColor="#333333" GridLines="None" Height="80px" CssClass="table table-responsive">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:TemplateField HeaderText="State">
