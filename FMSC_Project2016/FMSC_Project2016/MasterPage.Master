@@ -39,7 +39,7 @@
         }
     </style>
 </head>
-<body>
+<body style="background-color:azure">
 
     <div class="container" id="main">
         <div class="navbar navbar-fixed-top">
@@ -217,8 +217,12 @@
         </div>
         <!-- end container -->
     </footer>--%>
-
-
+    <br />
+        <br />
+        <br />
+        <br />
+    <br />
+        <br />
       <%--Footer begins--%>
     <div class="navbar navbar-inverse navbar-fixed-bottom">
         <div class="container">
@@ -230,14 +234,14 @@
 
                 <div class="col-sm-6">
                     <h6>About Us</h6>
-                    <p>
+                    <%--<p>
                         Founded in 1987, Feed My Starving Children (FMSC) is a Christian non-profit organization committed 
                         to feeding God's children hungry in body and spirit. The approach is simple: volunteers hand-pack 
                         meals specially formulated for malnourished children, and we send them to partners around the world 
                         where they're used to operate orphanages, schools, clinics and feeding programs to break the cycle 
                         of poverty.
 
-                    </p>
+                    </p>--%>
                 </div>
 
                 <!-- end col-sm-3 -->

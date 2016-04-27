@@ -44,6 +44,27 @@
                         <td><asp:TextBox ID="pin_address" runat="server" CssClass="form-group-sm form-control form-inline" Width="250px"></asp:TextBox></td>
                     </tr>
                     <tr>
+                        <td>Carrier</td>
+                        <td>
+                            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="form-control" AutoPostBack="true">
+                                <asp:ListItem Selected="True">Choose Provider</asp:ListItem>
+                                <asp:ListItem>alltel</asp:ListItem>
+                                <asp:ListItem>att cingular</asp:ListItem>
+                                <asp:ListItem>boost mobile</asp:ListItem>
+                                <asp:ListItem>cingular</asp:ListItem>
+                                <asp:ListItem>metro pcs</asp:ListItem>
+                                <asp:ListItem>nextel</asp:ListItem>
+                                <asp:ListItem>powertel</asp:ListItem>
+                                <asp:ListItem>sprint nextel</asp:ListItem>
+                                <asp:ListItem>suncom</asp:ListItem>
+                                <asp:ListItem>t-mobile</asp:ListItem>
+                                <asp:ListItem>us cellular</asp:ListItem>
+                                <asp:ListItem>verizon</asp:ListItem>
+                                <asp:ListItem>virgin mobile</asp:ListItem>
+                            </asp:DropDownList>
+                        </td>
+                    </tr>
+                    <tr>
                         <td>Phone Number</td>
                         <td><asp:TextBox ID="phone_num" runat="server" CssClass="form-group-sm form-control form-inline" Width="250px"></asp:TextBox></td>
                     </tr>
