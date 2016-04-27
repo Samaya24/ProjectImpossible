@@ -34,10 +34,18 @@ namespace FMSC_Project2016
             try
             {
                 dbConnection.Open();
-
+                string check = string.Empty;
+                if (CheckBox1.Checked)
+                {
+                    check = "Yes";
+                }
+                else
+                {
+                    check = "No";
+                }
                 string query = "INSERT INTO USER_DETAILS VALuES ('" + email_id.Text + "','" +
                     frst_name.Text + "','" + last_name.Text + "','" + street_address.Text + "','" +
-                    city_address.Text + "','" + DropDownListState.SelectedValue.ToUpper() + "','USA','" + pin_address.Text + "','" + phone_num.Text + "','" + "Yes" + "','"+DropDownList1.SelectedItem.Text+"');";
+                    city_address.Text + "','" + DropDownListState.SelectedValue.ToUpper() + "','USA','" + pin_address.Text + "','" + phone_num.Text + "','" + check + "','"+DropDownList1.SelectedItem.Text+"');";
                 sqlcommand = new SqlCommand(query, dbConnection);
                 sqlcommand.ExecuteNonQuery();
 

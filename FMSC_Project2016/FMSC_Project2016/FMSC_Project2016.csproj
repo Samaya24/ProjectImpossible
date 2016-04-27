@@ -96,6 +96,7 @@
     <Content Include="payment_success.aspx" />
     <Content Include="Paypal_trail.aspx" />
     <Content Include="AboutUs.aspx" />
+    <Content Include="WebForm1.aspx" />
     <None Include="Service References\ISUSMS\configuration91.svcinfo" />
     <None Include="Service References\ISUSMS\configuration.svcinfo" />
     <None Include="Service References\ISUSMS\Reference.svcmap">
@@ -237,6 +238,13 @@
     </Compile>
     <Compile Include="AboutUs.aspx.designer.cs">
       <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

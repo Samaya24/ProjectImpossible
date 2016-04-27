@@ -136,6 +136,11 @@
                             <asp:TextBox ID="phone_num" runat="server" CssClass="form-group-sm form-control form-inline" Width="250px"></asp:TextBox></td>
                     </tr>
                     <tr>
+                        <td>Subscribe to news letters</td>
+                        <td>
+                            <asp:CheckBox ID="CheckBox1" runat="server" /></td>
+                    </tr>
+                    <tr>
                         <td>
                             <asp:Button ID="Button1" runat="server" Text="Next Page" CssClass=" btn right" OnClick="Button1_Click" />
                         </td>
