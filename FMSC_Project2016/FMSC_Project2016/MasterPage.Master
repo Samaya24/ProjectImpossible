@@ -233,7 +233,7 @@
                 <!-- end col-sm-6 -->
 
                 <div class="col-sm-6">
-                    <h6>About Us</h6>
+                    <h6><a href="AboutUs.aspx">About Us</a></h6>
                     <%--<p>
                         Founded in 1987, Feed My Starving Children (FMSC) is a Christian non-profit organization committed 
                         to feeding God's children hungry in body and spirit. The approach is simple: volunteers hand-pack 

@@ -83,6 +83,8 @@
     <Content Include="DonateMeal.aspx" />
     <Content Include="ForgotPassword.aspx" />
     <Content Include="img\collage.jpg" />
+    <Content Include="img\mission.jpg" />
+    <Content Include="img\vision.jpg" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery-1.8.2.min.js" />
